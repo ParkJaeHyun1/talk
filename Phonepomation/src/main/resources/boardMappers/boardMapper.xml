@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="board">
+
+	<!-- 게시판 전체리스트출럭 -->
+	<select id="selectlist" resultType="boardVO">
+		select title,content,writer,regdate,viewcnt
+		from ph_board
+		where tno = #{tno}
+		order by bno desc
+	</select>
+	
+	<select id="selecttitle" resultType="String">
+		select	title
+		from ph_boardtype
+		where tno = #{tno}
+	</select>
+	<select id="selectpage" resultType="boardVO">
+		select title,content,writer,regdate,viewcnt,image
+		from ph_board
+		where bno=${bno}
+	</select>
+	<select id="listcount" resultType="int">
+		select count(bno)
+		from ph_board
+		where tno = #{tno}
+	</select>
+	<insert id="insert">
+		insert into ph_board(bno,tno,title,content,image,writer)
+			values(ph_boardtype_seq.nextval,#{tno},#{title},#{content},#{image},#{writer})
+	</insert>
+</mapper>

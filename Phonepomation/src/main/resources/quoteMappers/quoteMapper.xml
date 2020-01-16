@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="quote">
+  	<!-- 삼성 기기명 가져오기 -->	
+ 	<select id="samsung" resultType="com.phonefo.quote.domain.PhoneVO">
+ 		select name from ph_phone
+ 			where manufacture=#{manufacture}
+ 	</select>
+</mapper>

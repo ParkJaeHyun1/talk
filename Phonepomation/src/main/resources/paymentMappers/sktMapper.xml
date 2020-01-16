@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="skt">
+
+	
+	<!-- T 시그니처 요금제 -->
+	<select id="payment_signiture" resultType="Skt_payment">
+select *
+		from skt_pay
+		where payment like '%시그니처%'
+		order by fixed_month desc
+	</select>
+	<select id="payment_signiture_master" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like 'T 시그니처 Master'
+	</select>
+	<select id="payment_signiture_classic" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like 'T 시그니처 Classic'
+	</select>
+	
+	
+	<!-- band YF 요금제 -->
+	<select id="payment_band_yf" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%band YF%'
+		order by fixed_month desc
+	</select>
+	
+	<!--  -->
+	<select id="payment_band_data" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%band 데이터%'
+		order by fixed_month desc
+	</select>
+	
+	<select id="payment_everyone_unlimited" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%전국민 무한%' or payment like '%LTE 데이터%'
+		order by fixed_month desc
+	</select>
+	
+	<select id="payment_t_together" resultType="Skt_payment">
+		select *
+		from skt_pay
+		where payment like '%T끼리%'
+		order by fixed_month desc
+	</select>
+	
+</mapper>

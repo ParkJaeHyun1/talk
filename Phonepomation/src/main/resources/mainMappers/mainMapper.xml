@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="member">
+
+	<insert id="insertMember">
+	insert into ph_member 
+		values(#{userid},#{userpwd},#{username},sysdate,#{birth},#{gender},#{email},#{tel},#{root},#{status})
+	</insert>
+	
+	<select id="checkId" resultType="int">
+		select count(*) from ph_member
+			where userid=#{userid}
+		
+	</select>
+	
+	<select id="checkBId" resultType="int">
+		select count(*) from ph_business_member
+			where userid=#{userid}
+		
+	</select>
+	
+	
+	<insert id="insertMemberB">
+	insert into ph_business_member
+		values(#{userid},#{userpwd},#{tel},#{email},#{businessNum},#{companyName},#{leader},#{address},sysdate,#{root})
+	</insert>
+	
+	<select id="check_general_memeber"  resultType="int">
+		select count(*) from ph_member
+			where userid=#{userid} and userpwd=#{userpwd}
+	</select>
+	
+	<select id="check_business_memeber"  resultType="int">
+		select count(*) from ph_business_member
+			where userid=#{userid} and userpwd=#{userpwd}
+	</select>
+	
+		
+	<select id="getVO" resultType="com.phonefo.main.domain.MemberVO">
+		select userid,userpwd,username,rdate,birth,gender,email,tel,root,status from ph_member
+			where userid=#{userid}
+	</select>
+	
+	<select id="getBVO" resultType="com.phonefo.main.domain.B_MemberVO">
+		select userid,userpwd,tel,email,businessNum,companyName,leader,address,rdate,root from ph_business_member
+			where userid=#{userid}
+	</select>
+
+</mapper>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+   <!-- DataSource 등록 (Oracle드라이버설정) -->
+   <bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" 
+         id="dataSource">
+      <property name="driverClassName">
+         <value>oracle.jdbc.driver.OracleDriver</value>
+      </property>
+      <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+      <property name="username" value="scott"/>
+      <property name="password" value="tiger"/>
+   </bean>
+   
+   <!-- MyBatis를 DataSource에 연결(마이바티스 환경, sqlMapper등록) -->
+   <bean class="org.mybatis.spring.SqlSessionFactoryBean"
+         id="sqlSessionFactory">
+     <property name="dataSource" ref="dataSource"/>  
+     <property name="configLocation"
+               value="classpath:/mybatis-config.xml"/>  
+     <property name="mapperLocations"
+               value="classpath:**/*Mapper.xml"></property> 
+   </bean>
+   
+   <!-- SqlSession객체 생성(mapper(XML파일)에 있는 sql문 호출) -->
+   <bean class="org.mybatis.spring.SqlSessionTemplate"
+         id="sqlSession">
+      <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>      
+   </bean>
+   
+   <!-- DAOImpl 클래스 객체 등록 -->
+   <context:component-scan base-package="com.phonefo.main.persistence"/>
+   <context:component-scan base-package="com.phonefo.admin.persistence"/>
+   <context:component-scan base-package="com.phonefo.payment.persistence"/>
+
+   <context:component-scan base-package="com.phonefo.quote.persistence"/>
+      <context:component-scan base-package="com.phonefo.board.persistence"/>
+
+   <context:component-scan base-package="com.phonefo.board.persistence"/>
+   
+   <context:component-scan base-package="com.phonefo.phone.persistence"/>
+   
+   <context:component-scan base-package="com.phonefo.mypage.persistence"/>
+   
+   
+
+   <!-- 비지니스객체 등록 -->
+   <context:component-scan base-package="com.phonefo.main.service"></context:component-scan>
+   <context:component-scan base-package="com.phonefo.admin.service"></context:component-scan>
+   <context:component-scan base-package="com.phonefo.payment.service"></context:component-scan>
+
+   <context:component-scan base-package="com.phonefo.quote.service"></context:component-scan>
+ <context:component-scan base-package="com.phonefo.board.service"></context:component-scan>
+
+   <context:component-scan base-package="com.phonefo.board.service"></context:component-scan>
+   
+   <context:component-scan base-package="com.phonefo.phone.service"></context:component-scan>
+   
+   <context:component-scan base-package="com.phonefo.mypage.service"></context:component-scan>
+
+
+		
+</beans>
