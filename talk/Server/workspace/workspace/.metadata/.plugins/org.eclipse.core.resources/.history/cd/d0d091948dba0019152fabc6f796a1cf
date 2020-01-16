@@ -1,0 +1,106 @@
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+
+
+public class Server {
+
+	final int PORT=10001;
+
+	private final String TAG_LoginMsg  = "login";
+	private final String TAG_LogoutMsg  = "logout";
+	
+	ServerSocket serversocket;
+	HashMap<String, DataOutputStream> hmClients;
+
+	public Server(){
+		hmClients = new HashMap<String,DataOutputStream>();
+		Collections.synchronizedMap(hmClients);
+	}
+	public void StartServer(){
+		Socket socket;
+		try {
+			//서버소켓 생성.
+			serversocket=new ServerSocket(PORT);
+			while(true){
+				socket = serversocket.accept(); 
+				new MultiThread(socket).start();
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public void sendMsg(final String msg, String id){
+		final DataOutputStream os = hmClients.get(id);
+		if(os == null)
+			return;
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				try {
+					os.writeUTF(msg); //클라이언트로 메세지 보내기.UTF 방식으로(한글 전송가능...)
+					os.flush();   //다음 메세지 전송을 위해 연결통로의 버퍼를 지워주는 메소드..
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}).start(); //Thread 실행..
+	}
+	class MultiThread extends Thread{
+		Socket socket ;
+		String id;
+		DataInputStream is;
+		DataOutputStream os;
+
+		public MultiThread(Socket socket){
+			this.socket = socket;
+			try{
+				is = new DataInputStream(socket.getInputStream());
+				os = new DataOutputStream(socket.getOutputStream());
+			}catch(IOException e){
+				e.printStackTrace();
+			}
+		}
+
+		@Override
+		public void run(){
+			while(is != null){
+				try{
+					String msg = is.readUTF();
+					System.out.println("메세지:"+msg);
+					char msgType = msg.charAt(0);
+					switch (msgType) {
+					case '0':
+						hmClients.remove(id);
+						is = null;
+						break;
+					case '1':
+						hmClients.put(msg.substring(1), os);
+						id = msg.substring(1);
+						break;
+					case '2':
+
+						break;
+					case '3':
+						break;
+					default:
+						break;
+					}
+				}catch(IOException e){
+					e.printStackTrace();
+					break;
+				}
+			}
+		}
+
+	}
+}

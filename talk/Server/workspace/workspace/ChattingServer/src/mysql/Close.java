@@ -1,0 +1,25 @@
+package mysql;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class Open {
+
+	public static Connection open(){
+		Connection con = null;
+		try  
+		{  
+			Class.forName( "com.mysql.jdbc.Driver" ).newInstance();  
+			String url = "jdbc:mysql://localhost/chatApp?autoReconnect=true&useSSL=false";  
+			String userId = "root";  
+			String userPass = "wogus905" ;
+
+			con= DriverManager.getConnection(url, userId, userPass);  
+		}catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return con;
+	}
+	
+}

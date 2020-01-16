@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical">
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/iv_back"
+            android:layout_marginLeft="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="이름 변경하기"
+            android:layout_toRightOf="@+id/ivBack"
+            android:textColor="#000000"
+            android:textSize="20dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"/>
+        <Button
+            android:id="@+id/btSubmit"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:text="확인"
+            android:textSize="17dp"
+            android:textColor="#000000"
+            android:background="#00ff0000"
+            android:layout_alignParentRight="true"
+            android:enabled="false"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#cac0c0"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#d6caca"
+        android:layout_gravity="right"/>
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="이름을 입력해주세요."
+        android:textSize="18dp"
+        android:textColor="#493335"
+        android:layout_gravity="center_horizontal"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_gravity="center_horizontal">
+        <EditText
+            android:id="@+id/etFriendName"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:maxLines="1"
+            android:maxLength="10"
+            android:textSize="15dp"
+            android:paddingLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:background="#fcf9f9"/>
+
+        <TextView
+            android:id="@+id/tvTextNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="18dp"
+            android:layout_below="@+id/etFriendName"
+            android:layout_alignRight="@+id/etFriendName"
+            android:text="0/10"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/llFriendInfo"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal">
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:text="친구가 설정한 이름"
+            android:textSize="18dp"
+            android:textColor="#493335"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/tvFriendNameByFriend"
+            android:layout_width="250dp"
+            android:layout_height="47dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="#f1ebeb"
+            android:gravity="center_vertical"
+            android:paddingLeft="5dp"
+            android:text="박재현"
+            android:textColor="#a9a6a9"
+            android:textSize="18dp" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center">
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="25dp"
+            android:text="내 아이디"
+            android:textSize="13dp"
+            android:gravity="center"
+            android:background="#e6dede"/>
+        <TextView
+            android:id="@+id/tvMyId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="wogus519"
+            android:layout_marginLeft="10dp"/>
+</LinearLayout>

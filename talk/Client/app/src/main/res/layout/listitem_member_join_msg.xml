@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingBottom="8dp"
+    android:background="#9bbbd4">
+
+    <LinearLayout
+        android:id="@+id/llMsgDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0.1dp"
+            android:layout_weight="9"
+            android:background="#beaaaa"
+            android:layout_marginRight="5dp"/>
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="0dp"
+            android:layout_height="15dp"
+            android:textSize="10dp"
+            android:layout_weight="8"
+            android:text="2018년 2월 27일 화요일"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0.1dp"
+            android:layout_weight="9"
+            android:background="#beaaaa"
+            android:layout_marginLeft="5dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddㅇ"
+        android:textSize="13dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#292525"
+        android:background="#a9bdce"
+        android:paddingRight="3dp"
+        android:paddingLeft="3dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:layout_marginTop="5dp"
+        android:maxWidth="300dp"/>
+</LinearLayout>

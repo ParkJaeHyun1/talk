@@ -1,0 +1,60 @@
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+
+
+public class Server {
+
+	static final int PORT=10001;
+	ServerSocket serversocket;
+	HashMap<String, DataOutputStream> hmClients;
+	
+	public Server(){
+		hmClients = new HashMap<String,DataOutputStream>();
+		Collections.synchronizedMap(hmClients);
+	}
+	public void StartServer(){
+		Socket socket;
+		try {
+			//서버소켓 생성.
+			serversocket=new ServerSocket(PORT);
+			while(true){
+				socket = serversocket.accept(); 
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	class MultiThread extends Thread{
+		Socket socket = null;
+		
+		String msg;
+		DataInputStream is;
+		DataOutputStream os;
+		
+		public MultiThread(Socket socket){
+			this.socket = socket;
+			try{
+				is = new DataInputStream(socket.getInputStream());
+				os = new DataOutputStream(socket.getOutputStream());
+			}catch(IOException e){
+				e.printStackTrace();
+			}
+		}
+		
+		@Override
+		public void run(){
+			try{
+				String msg = is.readUTF();
+			}catch(IOException e){
+				e.printStackTrace();
+			}
+		}
+	}
+}

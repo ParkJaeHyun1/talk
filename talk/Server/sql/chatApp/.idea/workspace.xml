@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="aa0becec-9d0f-4b6c-8bab-ce5f20e67e3b" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupGrunt">
+      <scroll-view-position x="0" y="0" />
+    </layout>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="65" />
+    <option name="y" value="-4" />
+    <option name="width" value="1115" />
+    <option name="height" value="669" />
+  </component>
+  <component name="ProjectId" id="1Oj4LNw2RcJjFC52Hu52G7Fj910" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aa0becec-9d0f-4b6c-8bab-ce5f20e67e3b" name="Default Changelist" comment="" />
+      <created>1563341903528</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1563341903528</updated>
+      <workItem from="1563341908316" duration="1504000" />
+      <workItem from="1563411267744" duration="4730000" />
+      <workItem from="1563499713385" duration="1765000" />
+      <workItem from="1563514786934" duration="5251000" />
+      <workItem from="1563756017753" duration="712000" />
+      <workItem from="1563865074882" duration="940000" />
+      <workItem from="1563930810512" duration="16053000" />
+      <workItem from="1564016322144" duration="11406000" />
+      <workItem from="1564477634603" duration="1310000" />
+      <workItem from="1564550475914" duration="4708000" />
+      <workItem from="1564968449729" duration="9373000" />
+      <workItem from="1565078025083" duration="2009000" />
+      <workItem from="1565165029976" duration="599000" />
+      <workItem from="1565241131030" duration="1610000" />
+      <workItem from="1565328431354" duration="599000" />
+      <workItem from="1565431318969" duration="3175000" />
+      <workItem from="1565570575297" duration="2253000" />
+      <workItem from="1565657279611" duration="9286000" />
+      <workItem from="1565746162568" duration="7329000" />
+      <workItem from="1565931184284" duration="833000" />
+      <workItem from="1566030506069" duration="1806000" />
+      <workItem from="1566175693567" duration="16818000" />
+      <workItem from="1566262038595" duration="8171000" />
+      <workItem from="1566348155181" duration="1199000" />
+      <workItem from="1566792930188" duration="600000" />
+      <workItem from="1567393830580" duration="1035000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/selectFriendList.php</url>
+          <line>19</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

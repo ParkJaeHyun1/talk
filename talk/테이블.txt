@@ -1,0 +1,79 @@
+drop table user;
+create table user(
+id varchar(20) primary key,
+password varchar(20) not null,
+name varchar(20) not null,
+phone varchar(15) not null,
+profile varchar(40),
+picture varchar(30),
+chattingRoomNo int);
+
+drop table friend;
+create table friend(
+userID varchar(20) not null,
+friendID varchar(20) not null,
+nickName varchar(20),
+chattingRoomNo int,
+primary key(userID ,friendID));
+
+drop table chattingRoom;
+create table chattingRoom(
+userID varchar(20) not null,
+chattingRoomNo int unsigned not null,
+chattingRoomName varchar(20),
+joinDate timestamp,
+unreadMsgNum int unsigned default 0,
+lastReadMsgNo int unsigned default 0,
+primary key(userID,chattingRoomNo));
+
+drop table chattingRoomType;
+create table chattingRoomType(
+chattingRoomNo int unsigned primary key auto_increment,
+type int
+);
+
+drop table chattingMsg;
+create table chattingMsg(
+no int unsigned auto_increment primary key,
+type varchar(10) default '0',
+senderID varchar(20),
+chattingRoomNo int unsigned not null,
+content varchar(500),
+sendMsgDate timestamp,
+unreadUserNum int default 0
+);
+
+
+INSERT INTO user (id,password,name,phone) VALUES ('test','1234','¹ÚÀçÇö','01032932887');
+INSERT INTO user (id,password,name,phone) VALUES ('test1','1234','ÇÑ¼ö¿¬','01011112222');
+INSERT INTO user (id,password,name,phone) VALUES ('test2','1234','¿ì°æÈÆ','01051872155');
+INSERT INTO user (id,password,name,phone) VALUES ('test3','1234','±¸º»È«','01091675544');
+INSERT INTO user (id,password,name,phone) VALUES ('test4','1234','À¯°æÀº','01013135421');
+INSERT INTO user (id,password,name,phone) VALUES ('test5','1234','°­ÅÂÃµ','01012345678');
+INSERT INTO user (id,password,name,phone) VALUES ('test6','1234','ÀÌÁø¿À','01091911522');
+INSERT INTO user (id,password,name,phone) VALUES ('test7','1234','ÃÖ°Ç½Ä','01091875422');
+INSERT INTO user (id,password,name,phone) VALUES ('test8','1234','ÀÌ¼º¿í','01015432155');
+INSERT INTO user (id,password,name,phone) VALUES ('test9','1234','ÀÌ»óÇö','01016575122');
+INSERT INTO user (id,password,name,phone) VALUES ('test10','1234','ÀÌÇÏÀº','01097551234');
+INSERT INTO user (id,password,name,phone) VALUES ('test11','1234','±èÇýÀ±','01098871154');
+INSERT INTO user (id,password,name,phone) VALUES ('test12','1234','±èÁøÈ«','01055468721');
+INSERT INTO user (id,password,name,phone) VALUES ('test13','1234','¼³À¯ºó','01013457811');
+INSERT INTO user (id,password,name,phone) VALUES ('test14','1234','À±Èñ°æ','01084358712');
+INSERT INTO user (id,password,name,phone) VALUES ('test15','1234','±èÇöµµ','01091547512');
+INSERT INTO user (id,password,name,phone) VALUES ('test16','1234','ÀÌÇÏÀº','01067512457');
+INSERT INTO user (id,password,name,phone) VALUES ('test17','1234','ÀÌ½Â¿í','01071548751');
+INSERT INTO user (id,password,name,phone) VALUES ('test18','1234','±è¾Æ¿¬','01003124571');
+INSERT INTO user (id,password,name,phone) VALUES ('test19','1234','±è½ÂÈÆ','01041324517');
+
+INSERT INTO friend(userID,friendID) VALUES ('test','test1');
+INSERT INTO friend(userID,friendID) VALUES ('test','test2');
+INSERT INTO friend(userID,friendID) VALUES ('test','test3');
+INSERT INTO friend(userID,friendID) VALUES ('test','test4');
+INSERT INTO friend(userID,friendID) VALUES ('test','test5');
+INSERT INTO friend(userID,friendID) VALUES ('test','test6');
+INSERT INTO friend(userID,friendID) VALUES ('test','test7');
+INSERT INTO friend(userID,friendID) VALUES ('test','test8');
+INSERT INTO friend(userID,friendID) VALUES ('test','test9');
+INSERT INTO friend(userID,friendID) VALUES ('test','test10');
+INSERT INTO friend(userID,friendID) VALUES ('test','test11');
+INSERT INTO friend(userID,friendID) VALUES ('test','test12');
